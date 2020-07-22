@@ -1,0 +1,248 @@
+# Empty CSS file for your own CSS
+
+
+
+
+.wrapper {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .typing-demo {
+    width: 45ch;
+    animation: typing 2s steps(22), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid;
+    font-family: monospace;
+    font-size: 20px;
+    align-content: center;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
+      
+  @keyframes blink {
+    50% {
+      border-color: transparent
+    }
+  }
+
+
+
+html {
+    background-color:#fff;
+    color:#32353a;
+    font-family:Tahoma, Verdana, Segoe, sans-serif;
+    line-height:1.5;
+  }
+  
+  body {
+    margin:0;
+  }
+  
+  h1 {
+    font-family:'American Typewriter', 'Rockwell Extra Bold', 'Book Antiqua', Georgia, serif;
+    font-size:4em;
+  }
+  
+  /**
+  * Components
+  */
+  .counter {
+    margin-bottom:1rem;
+    border-bottom:.1875em dashed #d2d6dd;
+  }
+  
+  .tagline {
+    font-size:1.125em;
+    margin:2rem 1.5rem;
+  }
+  
+  .calories {
+    color:#8b919b;
+    font-size:.875em;
+  }
+  
+  .splash {
+    position: relative;
+    height:100vh;
+    max-width:30em;
+    text-align:center;
+  }
+  
+  .splash {
+    box-sizing:border-box;
+    max-width:30em;
+    margin:0 auto;
+    padding:1.5em;
+  }
+  
+  
+  /**
+  * Header animation
+  */
+  .counter {
+    position:relative;
+    padding-top:30vh;
+  }
+  
+  .counter h1 {
+    position:relative;
+    text-align:center;
+    margin:0;
+    line-height: .625;
+    z-index:2;
+    transform-origin: bottom center;
+  }
+  
+  .dish {
+    color:#e89c2b;
+    position:absolute;
+    width:1em;
+    height:1em;
+    margin-top:-.75em;
+    margin-left:-.5em;
+    font-size:2rem;
+    top:0;
+    transform:translateY(-3em);
+    transition-duration:.75s;
+    transition-timing-function:ease-in;
+    transition-property:transform;
+    z-index:1;
+  }
+  
+  .dish.drop {
+    transform:translateY(30vh);
+  }
+  
+  .nommer {
+    position:absolute;
+    bottom:2em;
+    margin-left:-1em;
+    color:rgba(0,0,0,.5);
+    font-size:1.5rem;
+    transform-origin:bottom center;
+  }
+  body {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-areas: "main" "footer";
+    overflow-x: hidden;
+    background: #F5F7FA;
+    min-height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+  }
+  body .footer {
+    z-index: 1;
+    --footer-background:#7ff074ec;
+    display: grid;
+    position: relative;
+    grid-area: footer;
+    min-height: 12rem;
+  }
+  body .footer .bubbles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1rem;
+    background: var(--footer-background);
+    -webkit-filter: url("#blob");
+            filter: url("#blob");
+  }
+  body .footer .bubbles .bubble {
+    position: absolute;
+    left: var(--position, 50%);
+    background: var(--footer-background);
+    border-radius: 100%;
+    -webkit-animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+            animation: bubble-size var(--time, 4s) ease-in infinite var(--delay, 0s), bubble-move var(--time, 4s) ease-in infinite var(--delay, 0s);
+    -webkit-transform: translate(-50%, 100%);
+            transform: translate(-50%, 100%);
+  }
+  body .footer .content {
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: 4rem;
+    padding: 2rem;
+    background: var(--footer-background);
+  }
+  body .footer .content a, body .footer .content p {
+    color: #F5F7FA;
+    text-decoration: none;
+  }
+  body .footer .content b {
+    color: white;
+  }
+  body .footer .content p {
+    margin: 0;
+    font-size: .75rem;
+  }
+  body .footer .content > div {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+            flex-direction: column;
+    -webkit-box-pack: center;
+            justify-content: center;
+  }
+  body .footer .content > div > div {
+    margin: 0.25rem 0;
+  }
+  body .footer .content > div > div > * {
+    margin-right: .5rem;
+  }
+  body .footer .content > div .image {
+    align-self: center;
+    width: 4rem;
+    height: 4rem;
+    margin: 0.25rem 0;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  @-webkit-keyframes bubble-size {
+    0%, 75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  
+  @keyframes bubble-size {
+    0%, 75% {
+      width: var(--size, 4rem);
+      height: var(--size, 4rem);
+    }
+    100% {
+      width: 0rem;
+      height: 0rem;
+    }
+  }
+  @-webkit-keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }
+  @keyframes bubble-move {
+    0% {
+      bottom: -4rem;
+    }
+    100% {
+      bottom: var(--distance, 10rem);
+    }
+  }
